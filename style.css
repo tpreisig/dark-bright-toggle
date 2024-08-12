@@ -1,94 +1,93 @@
 :root {
-    --color1: #9176FF;
-    --color2: #576CBC;
-    --dark-color: #123;
-    --dark-icon-color: #fff;
-    --light-color: #f8f7f9;
-    --light-icon-color: #FFDE59;
+  --dark-color: #111;
+  --dark-icon-color: #fff;
+  --dark-bg-icon: radial-gradient(rgb(128, 192, 248), rgb(2, 2, 124));
+  --light-color: #f8f7f9;
+  --light-icon-color: rgb(247, 195, 5);
+  --light-bg-icon: radial-gradient(rgb(251, 251, 2), rgb(253, 166, 5));
+  --btn-color: #fff;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--light-color);
+  border: 2px solid var(--light-icon-color);
 }
 
 .btn {
-    display: flex;
-    position: relative;
-    align-items: center;
-    cursor: pointer;
-    background-color: #fff;
-    width: 15em;
-    height: 8em;
-    border-radius: 10em;
-    padding: 0 0.5em;
-    box-shadow:
-        inset 0 2px 2px rgba(0, 0, 0, 0.2),
-        inset 0 2px 16px rgba(0, 0, 0, 0.1),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--btn-color);
+  width: 15em;
+  height: 8em;
+  border-radius: 10em;
+  padding: 0 0.5em;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.2),
+    inset 0 2px 16px rgba(0, 0, 0, 0.1), inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-indicator {
-    position: absolute;
-    background-color: var(--color);
-    width: 7em;
-    height: 7em;
-    border-radius: 50%;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform .3s ease;
+  position: absolute;
+  background: var(--light-bg-icon);
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
 .btn-icon-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-icon {
-    color: var(--light-icon-color);
-    font-size: 5rem;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  color: var(--dark-icon-color);
+  font-size: 5rem;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .btn-icon.animated {
-    animation: spin 0.5s;
+  animation: spin 0.5s;
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-
 body.darkmode {
-    background-color: var(--dark-color);
+  background-color: var(--dark-color);
+  border: 2px solid var(--btn-color);
 }
 
 .darkmode .btn {
-    box-shadow:
-        inset 0 2px 30px rgba(0, 0, 0, 0.5),
-        inset 0 2px 2px rgba(0, 0, 0, 0.3),
-        inset 0 -4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 2px rgba(0, 0, 0, 0.3), inset 0 -4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .darkmode .btn-indicator {
-    transform: translateX(7em);
-    background-color: var(--color2);
-    box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.4);
+  transform: translateX(7em);
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.4);
+  background: var(--dark-bg-icon);
 }
 
 .darkmode .btn-icon {
-    color: var(--dark-icon-color);
+  color: var(--dark-icon-color);
+  font-size: 5rem;
 }
